@@ -1,0 +1,31 @@
+opam-version: "2"
+name: "fjs_of_fml"
+version: "0.1"
+maintainer: "Thomas Wood <thomas.wood09@imperial.ac.uk>"
+authors: [
+  "Arthur Charguéraud <arthur@chargueraud.org>"
+  "Alan Schmitt <alan.schmitt@inria.fr>"
+  "Thomas Wood <thomas.wood09@imperial.ac.uk>"
+]
+homepage: "http://jscert.org/"
+bug-reports: "https://github.com/jscert/fjs_of_fml/issues"
+license: "BSD 3-clause"
+dev-repo: "https://github.com/jscert/fjs_of_fml.git#opam"
+build: [
+       ["autoconf"]
+       ["./configure" "-prefix" "%{prefix}%"]
+       [make]
+]
+install: [
+         [make "opam_install"]
+]
+remove: [
+        ["autoconf"]
+        ["./configure" "-prefix" "%{prefix}%"]
+	[make "clean"]
+]
+depends: [
+  "ocamlfind" {build}
+  "alcotest" {test}
+  "conf-autoconf" {build}
+]
