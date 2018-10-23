@@ -25,7 +25,7 @@ remove: [
 	[make "clean"]
 ]
 depends: [
-  "ocamlfind" {build}
-  "alcotest" {test}
-  "conf-autoconf" {build}
+  "ocamlfind"
+  "alcotest"
+  "conf-autoconf"
 ]
